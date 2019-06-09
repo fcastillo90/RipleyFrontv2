@@ -4,13 +4,11 @@ const randomFailure = async () => Math.floor(Math.random() * Math.floor(9))
 
 const apiCall = (weatherQuery, handleOpen, handleSetWeather) =>  {
   let headers = { headers: { 'Content-Type': 'application/json' } };
-  let body = weatherQuery
   handleOpen();
   randomFailure().then((response)=> {
     if(response){
-      axios.post(
-        "https://fcastillo90ripleybackv2.herokuapp.com/external-api",
-        body,
+      axios.get(
+        `https://fcastillo90ripleybackv2.herokuapp.com/external-api/${weatherQuery.lat},${weatherQuery.lon}`,
         headers
       )
       .then((response) => {
