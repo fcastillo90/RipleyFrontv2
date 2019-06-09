@@ -38,7 +38,11 @@ function MapContainer({google, fullScreen, classes}) {
     <>
       <Map
         google={google}
-        zoom={14}
+        zoom={4}
+        initialCenter={{
+          lat: 37.7513230,
+          lng: -97.8232320
+        }}
         className={classes.mapStyles}
         onClick={handleClick}
       />
@@ -57,5 +61,5 @@ function MapContainer({google, fullScreen, classes}) {
 }
 
 export default withStyles(styles)(withMobileDialog()(GoogleApiWrapper({
-  apiKey: 'AIzaSyD0gw3698rbpzxgU-okTh9OqmszNnWATDU'
+  apiKey: process.env.REACT_APP_GMAP_KEY
 })(MapContainer)));
