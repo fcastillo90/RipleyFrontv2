@@ -96,11 +96,11 @@ function DialogContentComponent({classes, weatherResponseData, retry, handleClos
                 justify="space-between"
                 alignItems="center"
               >
-                <Grid item>
+                <Grid item xs={12} sm={'auto'}>
                   <Typography variant="h4">{data.timezone}</Typography>
                   <Typography variant="h6">{data.currently.summary}</Typography>
                 </Grid>
-                <Grid item className={classes.rightAlign}>
+                <Grid item xs={12} sm={'auto'} className={classes.rightAlign}>
                   <Typography variant="subtitle1" className={classes.greyLetter}>{`${data.currently.windSpeed} mph`}</Typography>
                   <Typography variant="subtitle2" className={classes.greyLetter}>{`Humedad ${data.currently.humidity}%`}</Typography>
                 </Grid>
